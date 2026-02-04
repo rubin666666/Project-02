@@ -1,0 +1,199 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  --font-family: 'IBM Plex Sans', sans-serif;
+  --second-family: 'Epilogue', sans-serif;
+}
+/* === Feedback Section Container === */
+.feedback-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  overflow: hidden;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 80px; */
+}
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+.swiper-slide {
+  justify-content: center;
+}
+.feedback-card {
+  background-color: #060307;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 608px;
+  width: 100%;
+  margin-bottom: 16px;
+  margin: 0 auto;
+}
+/* Stars-rating handled by css-star-rating */
+/* Feedback */
+.feedback-text {
+  font-family: var(--second-family);
+  max-width: 518px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin: 32px 0;
+}
+.feedback-author {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  color: #FBFBFB;
+  margin-bottom: 16px;
+}
+/* === Swiper Arrows === */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+.feedback-swiper .swiper-button-prev,
+.feedback-swiper .swiper-button-next {
+  display: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.swiper-button-prev .arrow,
+.swiper-button-next .arrow {
+  display: block;
+  width: 14px;
+  height: 14px;
+  fill: #FBFBFB;
+  pointer-events: none;
+}
+/* === Pagination === */
+.feedback-swiper .custom-pagination {
+  position: static !important;
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
+}
+.feedback-swiper {
+  padding-bottom: 0;
+}
+.feedback-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #585757;
+  opacity: 0.5;
+  margin: 0 6px;
+}
+.feedback-swiper .swiper-pagination-bullet-active {
+  background-color: #FBFBFB;
+  opacity: 1;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 10px 24px;
+  width: 288px;
+  height: 47px;
+  background-color: #764191;
+  border: none;
+  /* margin-top: 16px; */
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #603177;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), inset 0 -2px 1px rgba(0, 0, 0, 0.3),
+    inset 0 2px 1px rgba(255, 255, 255, 0.2);
+  outline: none;
+  transform: translateY(-1px);
+}
+.btn-txt {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: #FBFBFB;
+}
+@media screen and (min-width: 768px) {
+  .feedback-swiper .swiper-button-prev,
+  .feedback-swiper .swiper-button-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background-color: #060307;
+    border-radius: 8px;
+    position: absolute;
+    top: 30%;
+    cursor: pointer;
+    z-index: 20;
+  }
+  .swiper-button-prev:active,
+  .swiper-button-next:active {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+  }
+  .swiper-button-prev .arrow,
+  .swiper-button-next .arrow {
+    display: block;
+    width: 14px;
+    height: 14px;
+    fill: #FBFBFB;
+    pointer-events: none;
+  }
+  .btn {
+    border-radius: 12px;
+    padding: 10px 14px;
+    width: 158px;
+    height: 47px;
+  }
+  .btn-txt {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: #FBFBFB;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .feedback-section {
+    padding-top: 112px;
+    padding-bottom: 112px;
+  }
+  .btn {
+    border-radius: 12px;
+    padding: 10px 24px;
+    width: 177px;
+    height: 47px;
+  }
+  .feedback-swiper .custom-pagination {
+    position: static !important;
+    margin-top: 80px !important;
+    margin-bottom: 80px;
+  }
+}
